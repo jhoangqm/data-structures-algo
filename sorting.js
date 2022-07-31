@@ -34,6 +34,25 @@ function sortListSelection(unsortedList) {
     return unsortedList;
 }
 
+// for each pass, we use a pointer to point at the first element of the list. For each cycle, we compare it to the next element in the list and swap them if the current item is greater, then move the pointer by one until it reaches the end of the list. We repeat this process until the list becomes sorted. The list is sorted if, during a pass, no swapping occurs.
+function sortListBubble(unsortedList) {
+    const n = unsortedList.length;
+    for (var i = n - 1; i >= 0; i--) {
+        let swapped = false;
+        for (var j = 0; j < i; j++) {
+            if (unsortedList[j] > unsortedList[j + 1]) {
+                const temp = unsortedList[j];
+                unsortedList[j] = unsortedList[j + 1];
+                unsortedList[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) return unsortedList;
+    }
+    return unsortedList;
+}
+
 console.log(sortList([1,6,2,3,7,10]))
 console.log(sortListFunction([1,5,2,3,7,10]))
 console.log(sortListSelection([1,5,2,3,7,10]))
+console.log(sortListBubble([1,5,2,3,7,10]))
