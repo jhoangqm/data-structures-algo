@@ -16,8 +16,7 @@ function sortListInsertion(unsortedList) {
     return unsortedList;
 }
 
-
-// sort method implemented in JavaScript
+// quick sort method implemented in JavaScript
 function sortListFunction(unsortedList) {
     return unsortedList.sort(( a , b ) => a - b)
 }
